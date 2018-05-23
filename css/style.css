@@ -1,0 +1,305 @@
+* {
+  font-size: 18px; }
+
+#main {
+  position: relative; }
+
+header {
+  padding: 10px 0;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  transition: all 0.5s ease-in-out; }
+  header .navigation {
+    display: flex; }
+    header .navigation a img {
+      height: 80px; }
+    header .navigation ul {
+      justify-content: flex-end;
+      display: flex;
+      list-style: none;
+      margin-top: 20px;
+      flex-grow: 3; }
+      header .navigation ul li {
+        margin-left: 30px;
+        color: white;
+        cursor: pointer; }
+        header .navigation ul li a {
+          color: white;
+          font-weight: bold;
+          padding: 5px 15px 5px 0; }
+          header .navigation ul li a:hover {
+            color: white;
+            text-decoration: none; }
+        header .navigation ul li .hvr-underline-from-left::before {
+          background: white; }
+
+.sticky_top {
+  background: #00000080;
+  padding: 5px 0; }
+
+.welcome_screen {
+  background-image: url(../images/banner_top.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  height: 100vh;
+  position: relative; }
+  .welcome_screen .welcome {
+    background-image: url(../images/trans.png);
+    background-size: contain;
+    position: absolute;
+    bottom: 0;
+    width: 60vw;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    height: 69vh;
+    padding: 17vw 3vw;
+    transform: translateY(2px); }
+    .welcome_screen .welcome h1 {
+      font-weight: bold;
+      text-shadow: 1px 1px 0px #717171;
+      font-size: 5vw; }
+    .welcome_screen .welcome p {
+      text-transform: uppercase;
+      font-size: 1vw; }
+    .welcome_screen .welcome h3 {
+      font-size: 1.7vw; }
+
+.list_product {
+  padding: 80px 0; }
+  .list_product h2 {
+    margin-bottom: 30px;
+    font-weight: bold; }
+  .list_product .list {
+    text-align: center; }
+    .list_product .list .item {
+      padding: 10px 0; }
+      .list_product .list .item a {
+        color: black;
+        text-decoration: none;
+        display: inline-block; }
+        .list_product .list .item a img {
+          width: 100%; }
+        .list_product .list .item a .name,
+        .list_product .list .item a .price {
+          font-weight: 600;
+          margin: 0; }
+        .list_product .list .item a .id {
+          color: #5a5a5a;
+          margin: 0;
+          font-size: 0.8rem; }
+
+.own {
+  text-align: center;
+  margin: 80px 0; }
+  .own h3 {
+    font-weight: bold;
+    margin-bottom: 50px; }
+  .own .avt {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 40px auto; }
+    .own .avt img {
+      width: 150%;
+      transform: translateX(-90px); }
+  .own p {
+    font-weight: bold;
+    font-size: 1.7rem; }
+
+.coppyright {
+  background: black;
+  color: white;
+  padding: 5px 0; }
+  .coppyright div {
+    font-size: 0.7rem; }
+
+.pop_up {
+  position: fixed;
+  z-index: 99999;
+  width: 450px;
+  height: 300px;
+  background: #000000a1;
+  top: 30%;
+  left: 39%;
+  border-radius: 20px;
+  padding: 45px;
+  color: white;
+  font-weight: bold;
+  visibility: hidden; }
+  .pop_up i {
+    float: right;
+    transform: translateY(-25px);
+    cursor: pointer; }
+  .pop_up form label {
+    margin-right: 10px; }
+  .pop_up form input[type="submit"] {
+    width: 100%;
+    font-weight: bold;
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: black;
+    outline: none;
+    border: none;
+    padding: 10px 0; }
+
+.active {
+  visibility: visible;
+  animation: show 0.5s ease-in-out;
+  animation-fill-mode: forwards; }
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+.banner_top {
+  background: url(../images/banner_top.jpg);
+  background-position: 0 60%;
+  height: 30vh;
+  background-attachment: fixed; }
+
+.box {
+  display: flex; }
+  .box .side_bar {
+    height: 100vh;
+    width: 15vw;
+    background: black; }
+    .box .side_bar ul {
+      list-style: none;
+      margin-top: 200px;
+      padding: 0; }
+      .box .side_bar ul li {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 200px;
+        cursor: pointer;
+        padding: 60px 30px; }
+        .box .side_bar ul li:hover {
+          background: white;
+          color: black; }
+  .box .table_aside {
+    overflow: scroll; }
+    .box .table_aside .user_edit,
+    .box .table_aside .product_edit {
+      display: none;
+      width: 60%;
+      margin: 100px auto; }
+      .box .table_aside .user_edit h1,
+      .box .table_aside .product_edit h1 {
+        text-align: center; }
+      .box .table_aside .user_edit table,
+      .box .table_aside .product_edit table {
+        width: 100%;
+        border: 2px solid #eaeaea;
+        text-align: center;
+        table-layout: fixed; }
+        .box .table_aside .user_edit table tr,
+        .box .table_aside .product_edit table tr {
+          border: 2px solid #eaeaea; }
+          .box .table_aside .user_edit table tr:nth-child(even),
+          .box .table_aside .product_edit table tr:nth-child(even) {
+            background-color: #f2f2f2; }
+          .box .table_aside .user_edit table tr th,
+          .box .table_aside .user_edit table tr td,
+          .box .table_aside .product_edit table tr th,
+          .box .table_aside .product_edit table tr td {
+            border: 2px solid #eaeaea;
+            padding: 10px; }
+            .box .table_aside .user_edit table tr th a,
+            .box .table_aside .user_edit table tr td a,
+            .box .table_aside .product_edit table tr th a,
+            .box .table_aside .product_edit table tr td a {
+              margin-left: 20px;
+              color: black;
+              font-weight: bold;
+              text-decoration: none; }
+              .box .table_aside .user_edit table tr th a:hover,
+              .box .table_aside .user_edit table tr td a:hover,
+              .box .table_aside .product_edit table tr th a:hover,
+              .box .table_aside .product_edit table tr td a:hover {
+                color: #ff5400; }
+          .box .table_aside .user_edit table tr img,
+          .box .table_aside .product_edit table tr img {
+            width: 100%; }
+      .box .table_aside .user_edit .add,
+      .box .table_aside .product_edit .add {
+        display: inline-block;
+        color: black;
+        padding: 5px 10px;
+        margin: 10px 0;
+        background: white;
+        outline: none;
+        border: 1px solid #a7a7a7; }
+        .box .table_aside .user_edit .add:hover,
+        .box .table_aside .product_edit .add:hover {
+          border-color: black; }
+    .box .table_aside .active {
+      display: block;
+      transition: all 0.4s ease-in-out; }
+
+.insert_user,
+.insert_product,
+.edit_user,
+.edit_product {
+  width: 25%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  background: #ececec;
+  padding: 20px;
+  box-shadow: 1px 1px 10px black;
+  border-radius: 10px;
+  font-weight: bold; }
+  .insert_user button,
+  .insert_product button,
+  .edit_user button,
+  .edit_product button {
+    margin-top: 10px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    border-radius: 30px; }
+
+.banner_bot img {
+  width: 100%; }
+
+.under {
+  background-image: url(../images/banne_bot2.jpg);
+  background-size: cover; }
+  .under .infor {
+    background: #000000ab;
+    color: white;
+    text-align: center;
+    padding: 80px; }
+    .under .infor h3 {
+      font-weight: bold;
+      margin-bottom: 50px; }
+    .under .infor .avt {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 40px auto; }
+      .under .infor .avt img {
+        width: 150%;
+        transform: translateX(-90px); }
+    .under .infor p {
+      font-weight: bold;
+      font-size: 1.7rem; }
+    .under .infor .detail {
+      font-size: 1rem; }
+      .under .infor .detail p {
+        font-size: 1rem; }
+      .under .infor .detail i {
+        font-size: 2rem; }
+
+/*# sourceMappingURL=style.css.map */
