@@ -1,3 +1,27 @@
+<?php
+    include("connect.php");
+
+    $userId = $_GET['id'];
+    $userName = $_GET['n'];
+    $userPassword = $_GET['p'];
+
+
+    if(isset($_POST['submit'])){
+        if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['password'])){
+
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $password = $_POST['password'];
+
+        $sql = "UPDATE user SET id = '$id', name= '$name', password = '$password' WHERE id = '$userId'";
+        $user = mysqli_query($conn, $sql);
+        header("Location: chinhsua.php");      
+        }
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +36,12 @@
 </head>
 
 <body>
-    <form action="" class="edit_user">
+    <form action="edit_user.php?id=<?php echo $userId; ?>&n=<?php echo $userName; ?>&p=<?php echo $userPassword; ?>" class="edit_user" method="post">
        <h1>EDIT USER</h1>
-        <label for="id">ID</label>
-        <input type="text" id="id">
-        <label for="name">TÊN</label>
-        <input type="text" id="name">
-        <label for="pass">PASSWORD</label>
-        <input type="password" id="pass">
-        <button type="submit">EDIT</button>
+        <label for="id">ID</label><input type="text" id="id" name="id" value="<?php echo $userId ?>">
+        <label for="name">TÊN</label><input type="text" id="name" name="name" value="<?php echo $userName ?>">
+        <label for="pass">PASSWORD</label><input type="password" id="pass" name="password" value="<?php echo $userPassword ?>">
+        <button type="submit" name="submit">EDIT</button>
     </form>
 </body>
 

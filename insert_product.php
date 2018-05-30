@@ -1,3 +1,38 @@
+<?php
+    include("connect.php");
+
+    if(isset($_POST['submit'])){
+        if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['price'])){
+            if($_FILES['image']['type'] == "image/jpeg" 
+                || $_FILES['image']['type'] == "image/png" 
+                || $_FILES['image']['type'] == "image/gif"){
+
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $price = $_POST['price'];
+
+                $tmp = $_FILES['image']['tmp_name'];
+                $url = $_FILES['image']['name'];
+
+                move_uploaded_file($tmp, "images/".$url);
+
+                 $sql = "INSERT INTO product (id, name, price, url)
+                         VALUES ('$id', '$name', '$price', '$url')";
+                 $product = mysqli_query($conn, $sql);
+                 header("Location: chinhsua.php");      
+            }
+            else{
+                echo "Kiểu file không hợp lệ";
+            }
+        }
+    }
+
+
+
+ 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,17 +47,13 @@
 </head>
 
 <body>
-    <form action="" class="insert_product">
+    <form action="insert_product.php" class="insert_product" method="post" enctype="multipart/form-data">
        <h1>INSERT PRODUCT</h1>
-        <label for="id">ID</label>
-        <input type="text" id="id">
-        <label for="name">TÊN</label>
-        <input type="text" id="name">
-        <label for="pass">PASSWORD</label>
-        <input type="password" id="pass">
-        <label for="image">IMAGE</label>
-        <input type="file" id="image">
-        <button type="submit">UPLOAD PRODUCT</button>
+        <label for="id">ID</label><input type="text" id="id" name="id">
+        <label for="name">TÊN</label><input type="text" id="name" name="name">
+        <label for="price">GIÁ</label><input type="number" id="price" name="price">
+        <label for="image">IMAGE</label><input type="file" id="image" name="image">
+        <button type="submit" name="submit">UPLOAD PRODUCT</button>
     </form>
 </body>
 
