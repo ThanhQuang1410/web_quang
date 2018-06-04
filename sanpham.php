@@ -66,7 +66,7 @@ session_start();
                 <?php
                 }else{
                 ?>
-                    <li><a class="hvr-underline-from-center sign_in">ĐĂNG NHẬP</a></li>
+                    <li><a class="hvr-underline-from-left sign_in">ĐĂNG NHẬP</a></li>
                 <?php
                 }
                 ?>
