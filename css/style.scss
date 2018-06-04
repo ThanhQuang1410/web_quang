@@ -47,7 +47,9 @@ header {
                 }
             }
         }
-        .signout {
+        .signout,form {
+            color: white;
+            font-weight: bold;
             input {
                 background: none;
                 outline: none;
