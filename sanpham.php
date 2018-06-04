@@ -98,12 +98,12 @@ session_start();
     </div>
     <div class="pop_up">
         <i class="fas fa-times exit"></i>
-        <form action="">
+        <form action="index.php" method="post" enctype="multipart/form-data">
             <label for="user">USER NAME:</label>
-            <input type="text" id="user">
+            <input type="text" id="user" name="name">
             <label for="pass">PASSWORD:</label>
-            <input type="text" id="pass">
-            <input type="submit" value="ĐĂNG NHẬP">
+            <input type="password" id="pass" name="password">
+            <input type="submit" value="ĐĂNG NHẬP" name="submit">
         </form>
     </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
