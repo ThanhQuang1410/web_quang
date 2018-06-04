@@ -32,7 +32,15 @@ header {
             color: white;
             text-decoration: none; }
         header .navigation ul li .hvr-underline-from-left::before {
-          background: white; }
+          background: white !important; }
+    header .navigation .signout input {
+      background: none;
+      outline: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      margin-top: 5px;
+      cursor: pointer; }
 
 .sticky_top {
   background: #00000080;

@@ -42,9 +42,20 @@ header {
                 }
                 .hvr-underline-from-left {
                     &::before {
-                        background: white;
+                        background: white !important;
                     }
                 }
+            }
+        }
+        .signout {
+            input {
+                background: none;
+                outline: none;
+                border: none;
+                color: white;
+                font-weight: bold;
+                margin-top: 5px;
+                cursor: pointer;
             }
         }
     }
@@ -231,7 +242,7 @@ header {
             li {
                 color: white;
                 font-weight: bold;
-                margin-bottom:  10vw;
+                margin-bottom: 10vw;
                 cursor: pointer;
                 padding: 60px 30px;
                 &:hover {
